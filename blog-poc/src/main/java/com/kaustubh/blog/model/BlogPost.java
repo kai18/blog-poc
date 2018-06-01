@@ -4,8 +4,12 @@ import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
+import com.kaustubh.blog.core.IModel;
+
 @NodeEntity
-public class Blog {
+public class BlogPost implements IModel {
+
+	private static final long serialVersionUID = -3850785306705141779L;
 
 	@Id
 	@GeneratedValue
@@ -17,7 +21,7 @@ public class Blog {
 	
 	
 
-	public Blog(String title, String content, String timeStamp) {
+	public BlogPost(String title, String content, String timeStamp) {
 		super();
 		this.title = title;
 		this.content = content;
@@ -66,7 +70,7 @@ public class Blog {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Blog other = (Blog) obj;
+		BlogPost other = (BlogPost) obj;
 		if (content == null) {
 			if (other.content != null)
 				return false;
