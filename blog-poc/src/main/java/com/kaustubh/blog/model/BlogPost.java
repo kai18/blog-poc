@@ -1,5 +1,7 @@
 package com.kaustubh.blog.model;
 
+import java.util.Date;
+
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -17,14 +19,17 @@ public class BlogPost implements IModel {
 
 	private String title;
 	private String content;
-	private String timeStamp;
+	private Date timeStamp;
+
 	User author;
 
-	public BlogPost(String title, String content, String timeStamp) {
+	public BlogPost(Long id, String title, String content, Date timeStamp, User author) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.timeStamp = timeStamp;
+		this.author = author;
 	}
 
 	public String getTitle() {
@@ -43,49 +48,28 @@ public class BlogPost implements IModel {
 		this.content = content;
 	}
 
-	public String getTimeStamp() {
+	public Date getTimeStamp() {
 		return timeStamp;
 	}
 
-	public void setTimeStamp(String timeStamp) {
+	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((content == null) ? 0 : content.hashCode());
-		result = prime * result + ((timeStamp == null) ? 0 : timeStamp.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		return result;
+	public Long getId() {
+		return id;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		BlogPost other = (BlogPost) obj;
-		if (content == null) {
-			if (other.content != null)
-				return false;
-		} else if (!content.equals(other.content))
-			return false;
-		if (timeStamp == null) {
-			if (other.timeStamp != null)
-				return false;
-		} else if (!timeStamp.equals(other.timeStamp))
-			return false;
-		if (title == null) {
-			if (other.title != null)
-				return false;
-		} else if (!title.equals(other.title))
-			return false;
-		return true;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public User getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(User author) {
+		this.author = author;
 	}
 
 }
