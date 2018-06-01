@@ -4,7 +4,7 @@ import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
-import com.kaustubh.blog.core.IModel;
+import com.kaustubh.blog.core.model.IModel;
 
 @NodeEntity
 public class BlogPost implements IModel {
