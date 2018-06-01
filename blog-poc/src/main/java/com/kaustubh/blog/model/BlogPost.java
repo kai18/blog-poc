@@ -14,12 +14,11 @@ public class BlogPost implements IModel {
 	@Id
 	@GeneratedValue
 	Long id;
-	
+
 	private String title;
 	private String content;
 	private String timeStamp;
-	
-	
+	User author;
 
 	public BlogPost(String title, String content, String timeStamp) {
 		super();
