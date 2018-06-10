@@ -17,6 +17,7 @@ public class HasWritten implements IModel {
 	@Id
 	@GeneratedValue
 	Long id;
+
 	@StartNode
 	private User author;
 	@EndNode

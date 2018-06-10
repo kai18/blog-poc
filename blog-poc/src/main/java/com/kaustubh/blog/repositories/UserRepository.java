@@ -6,6 +6,6 @@ import com.kaustubh.blog.model.User;
 
 public interface UserRepository extends Neo4jRepository<User, String> {
 
-	public User save(User user);
+	public User findByEmail(String email);
 
 }

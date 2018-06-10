@@ -23,6 +23,9 @@ public class BlogPost implements IModel {
 
 	User author;
 
+	public BlogPost() {
+	}
+
 	public BlogPost(Long id, String title, String content, Date timeStamp, User author) {
 		super();
 		this.id = id;
@@ -70,6 +73,12 @@ public class BlogPost implements IModel {
 
 	public void setAuthor(User author) {
 		this.author = author;
+	}
+
+	@Override
+	public String toString() {
+		return "BlogPost [id=" + id + ", title=" + title + ", content=" + content + ", timeStamp=" + timeStamp
+				+ ", author=" + author + "]";
 	}
 
 }
