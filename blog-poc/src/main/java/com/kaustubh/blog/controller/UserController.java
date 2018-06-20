@@ -14,7 +14,7 @@ import com.kaustubh.blog.model.User;
 import com.kaustubh.blog.service.UserService;
 
 @RestController
-@RequestMapping("/user/")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
@@ -27,7 +27,7 @@ public class UserController {
 		userService.saveUser(user);
 	}
 
-	@GetMapping("/user/{email}")
+	@GetMapping("{email}")
 	public User getUser(@PathVariable(value = "email") String email) {
 		LOGGER.info("Requesting user with email {}", email);
 		return userService.getUser(email);

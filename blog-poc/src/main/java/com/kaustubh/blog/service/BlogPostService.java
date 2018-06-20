@@ -5,8 +5,8 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kaustubh.blog.model.BlogPost;
 import com.kaustubh.blog.model.AuthorToPostRelationship;
+import com.kaustubh.blog.model.BlogPost;
 import com.kaustubh.blog.model.User;
 import com.kaustubh.blog.repositories.BlogPostRepository;
 import com.kaustubh.blog.repositories.HasWrittenRepository;
