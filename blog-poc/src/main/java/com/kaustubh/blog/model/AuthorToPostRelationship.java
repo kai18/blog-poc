@@ -7,11 +7,12 @@ import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.RelationshipEntity;
 import org.neo4j.ogm.annotation.StartNode;
+import org.neo4j.ogm.annotation.typeconversion.DateLong;
 
 import com.kaustubh.blog.core.model.IModel;
 
 @RelationshipEntity(type = "HAS_WRITTEN")
-public class HasWritten implements IModel {
+public class AuthorToPostRelationship implements IModel {
 
 	private static final long serialVersionUID = 7745566379321767335L;
 	@Id
@@ -23,13 +24,14 @@ public class HasWritten implements IModel {
 	@EndNode
 	private BlogPost post;
 
+	@DateLong
 	private Date timestamp;
 	private String status;
 
-	public HasWritten() {
+	public AuthorToPostRelationship() {
 	}
 
-	public HasWritten(User author, BlogPost post, Date timestamp, String status) {
+	public AuthorToPostRelationship(User author, BlogPost post, Date timestamp, String status) {
 		super();
 		this.author = author;
 		this.post = post;

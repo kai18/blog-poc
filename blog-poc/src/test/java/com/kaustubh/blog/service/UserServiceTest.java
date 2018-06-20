@@ -22,15 +22,13 @@ public class UserServiceTest {
 
 	@Test
 	public void testWithEmailId() {
-		assertThat(userService.getUser("lol")).isNotNull();
+		assertThat(userService.getUser("kaustubh0163@gmail.com")).isNotNull();
 	}
 
 	@Test
 	public void testForRelationship() {
-		User user = userService.getUser("lol12");
+		User user = userService.getUser("kaustubh0163@gmail.com");
 		assertThat(user.getPosts()).isNotNull();
-		assertThat(user.getPosts()).isNotEmpty();
-
 	}
 
 }

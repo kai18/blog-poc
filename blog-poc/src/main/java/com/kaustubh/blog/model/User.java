@@ -1,9 +1,11 @@
 package com.kaustubh.blog.model;
 
+import java.util.List;
 import java.util.Set;
 
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.Labels;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -17,15 +19,16 @@ public class User implements IModel {
 	@Id
 	@GeneratedValue
 	Long id;
+
+	@Labels
+	List<String> labels;
 	String firstName;
 	String lastName;
 	String email;
+	String password;
 
-	@Relationship(type = "HAS_WRITTEN", direction = Relationship.UNDIRECTED)
+	@Relationship(type = "HAS_WRITTEN", direction = Relationship.OUTGOING)
 	private Set<BlogPost> posts;
-
-	@Relationship(type = "HAS_WRITTEN", direction = Relationship.UNDIRECTED)
-	private Set<HasWritten> hasWrittenRelationship;
 
 	public User() {
 	}
@@ -76,6 +79,14 @@ public class User implements IModel {
 
 	public void setPosts(Set<BlogPost> posts) {
 		this.posts = posts;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override

@@ -21,18 +21,15 @@ public class BlogPost implements IModel {
 	private String content;
 	private Date timeStamp;
 
-	User author;
-
 	public BlogPost() {
 	}
 
-	public BlogPost(Long id, String title, String content, Date timeStamp, User author) {
+	public BlogPost(Long id, String title, String content, Date timeStamp) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.timeStamp = timeStamp;
-		this.author = author;
 	}
 
 	public String getTitle() {
@@ -67,18 +64,9 @@ public class BlogPost implements IModel {
 		this.id = id;
 	}
 
-	public User getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(User author) {
-		this.author = author;
-	}
-
 	@Override
 	public String toString() {
-		return "BlogPost [id=" + id + ", title=" + title + ", content=" + content + ", timeStamp=" + timeStamp
-				+ ", author=" + author + "]";
+		return "BlogPost [id=" + id + ", title=" + title + ", content=" + content + ", timeStamp=" + timeStamp + "]";
 	}
 
 }

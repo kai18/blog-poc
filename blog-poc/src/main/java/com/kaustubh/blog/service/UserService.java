@@ -1,10 +1,12 @@
 package com.kaustubh.blog.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.kaustubh.blog.model.User;
 import com.kaustubh.blog.repositories.UserRepository;
 
+@Service
 public class UserService {
 
 	@Autowired
